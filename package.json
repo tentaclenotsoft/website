@@ -1,6 +1,6 @@
 {
   "name": "tentaclesoft",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,6 +9,7 @@
     "fix": "standard --fix"
   },
   "dependencies": {
+    "@octokit/core": "^3.2.5",
     "next": "10.0.7",
     "react": "17.0.1",
     "react-dom": "17.0.1",
