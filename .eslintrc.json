@@ -5,8 +5,8 @@
     "node": true
   },
   "extends": [
-    "plugin:react/recommended",
     "standard",
+    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
@@ -22,7 +22,7 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "no-use-before-define": "off",
-    "react/prop-types": "off"
+    "camelcase": "off",
+    "no-use-before-define": "off"
   }
 }

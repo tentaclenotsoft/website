@@ -1,4 +1,3 @@
-/* eslint camelcase: "off" */
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import { Octokit } from '@octokit/core'
