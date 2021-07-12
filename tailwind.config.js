@@ -5,7 +5,7 @@ module.exports = {
     backgroundColor: (theme) => ({
       ...theme('colors'),
       dark: {
-        soft: '#333',
+        soft: '#252525',
         hard: '#151515'
       }
     })
