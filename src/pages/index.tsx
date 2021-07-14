@@ -27,7 +27,7 @@ const Home: React.FC = () => {
                 {repository.description}
               </p>
               <div className="flex justify-between text-sm">
-                <span>{repository.language}</span>
+                <span className={'text-lang-' + repository.language.toLowerCase()}>{repository.language}</span>
                 <div className="h-4 pt-1 text-xs flex space-x-2">
                   {repository.stars > 0 &&
                     <span>
