@@ -3,6 +3,7 @@ import React from 'react'
 import { StarIcon, RepoForkedIcon } from '@primer/octicons-react'
 
 import { useFetch } from '../hooks/useFetch'
+import { ExternalLinks } from '../utils/Constants'
 
 const Home: React.FC = () => {
   const { data } = useFetch('/api/repositories')
@@ -14,18 +15,15 @@ const Home: React.FC = () => {
           tentaclesoft
         </h1>
         <div className="my-4 font-thin flex justify-center gap-2">
-          <a
-            className="border-b border-transparent hover:border-white"
-            href="https://github.com/tentaclenotsoft"
-          >
-            GitHub
-          </a>
-          <a
-            className="border-b border-transparent hover:border-white"
-            href="https://steamcommunity.com/groups/tentaclesoft"
-          >
-            Steam Group
-          </a>
+          {ExternalLinks.map(({ name, link }, index) => (
+            <a
+              key={index}
+              className="border-b border-transparent hover:border-white"
+              href={link}
+            >
+              {name}
+            </a>
+          ))}
         </div>
         <div className="grid sm:grid-cols-2 gap-1">
           {data?.map((repository) => (
