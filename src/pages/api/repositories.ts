@@ -1,4 +1,3 @@
-/* eslint camelcase: "off" */
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import { Octokit } from '@octokit/core'
@@ -33,12 +32,18 @@ export default async (
         id,
         name,
         html_url,
-        description
+        description,
+        language,
+        stargazers_count,
+        forks
       }) => ({
         id,
         name,
         url: html_url,
-        description
+        description,
+        language,
+        stars: stargazers_count,
+        forks
       }))
 
     cachedRepositories = repositories
