@@ -52,7 +52,7 @@ const Home: React.FC = () => {
                     {repository.language}
                   </span>
                 </div>
-                <div className="h-4 text-xs flex space-x-2">
+                <div className="text-xs flex space-x-2">
                   {repository.stars > 0 && (
                     <span>
                       <StarIcon size={14} /> {repository.stars}
