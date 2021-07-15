@@ -27,7 +27,7 @@ const Home: React.FC = () => {
             Steam Group
           </a>
         </div>
-        <div className="grid grid-cols-2 gap-1">
+        <div className="grid sm:grid-cols-2 gap-1">
           {data?.map((repository) => (
             <a
               key={repository.id}
