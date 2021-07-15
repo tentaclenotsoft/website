@@ -7,10 +7,7 @@ module.exports = {
       dark: {
         soft: '#252525',
         hard: '#151515'
-      }
-    }),
-    textColor: (theme) => ({
-      ...theme('colors'),
+      },
       lang: {
         javascript: '#f1e05a'
       }

@@ -10,7 +10,9 @@ const Home: React.FC = () => {
   return (
     <div className="bg-dark-hard text-white font-sans flex h-screen">
       <div className="m-auto">
-        <h1 className="text-3xl font-thin text-center cursor-default">tentaclesoft</h1>
+        <h1 className="text-3xl font-thin text-center cursor-default">
+          tentaclesoft
+        </h1>
         <div className="my-4 font-thin flex justify-center gap-2">
           <a
             className="border-b border-transparent hover:border-white"
@@ -41,18 +43,23 @@ const Home: React.FC = () => {
                 {repository.description}
               </p>
               <div className="flex justify-between text-sm">
-                <span className={'text-lang-' + repository.language.toLowerCase()}>{repository.language}</span>
+                <div className="flex items-center">
+                  <span
+                    className={`mr-1.5 h-3 w-3 border rounded-full border-transparent bg-lang-${repository.language.toLowerCase()}`}
+                  ></span>
+                  <span className="">{repository.language}</span>
+                </div>
                 <div className="h-4 pt-1 text-xs flex space-x-2">
-                  {repository.stars > 0 &&
+                  {repository.stars > 0 && (
                     <span>
                       <StarIcon size={16} /> {repository.stars}
                     </span>
-                  }
-                  {repository.forks > 0 &&
+                  )}
+                  {repository.forks > 0 && (
                     <span>
                       <RepoForkedIcon size={16} /> {repository.forks}
                     </span>
-                  }
+                  )}
                 </div>
               </div>
             </a>
