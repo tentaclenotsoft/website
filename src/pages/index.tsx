@@ -42,12 +42,14 @@ const Home: React.FC = () => {
               <p className="text-xs flex-auto text-justify text-gray-400 leading-sm">
                 {repository.description}
               </p>
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between">
                 <div className="flex items-center">
                   <span
                     className={`mr-1.5 h-3 w-3 border rounded-full border-transparent bg-lang-${repository.language.toLowerCase()}`}
                   ></span>
-                  <span className="">{repository.language}</span>
+                  <span className="text-xs font-light">
+                    {repository.language}
+                  </span>
                 </div>
                 <div className="h-4 pt-1 text-xs flex space-x-2">
                   {repository.stars > 0 && (
