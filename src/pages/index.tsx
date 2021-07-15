@@ -10,8 +10,22 @@ const Home: React.FC = () => {
   return (
     <div className="bg-dark-hard text-white font-sans flex h-screen">
       <div className="m-auto">
-        <h1 className="text-3xl font-thin text-center">tentaclesoft</h1>
-        <div className="mt-4 grid grid-cols-2 gap-1">
+        <h1 className="text-3xl font-thin text-center cursor-default">tentaclesoft</h1>
+        <div className="my-4 font-thin flex justify-center gap-2">
+          <a
+            className="border-b border-transparent hover:border-white"
+            href="https://github.com/tentaclenotsoft"
+          >
+            GitHub
+          </a>
+          <a
+            className="border-b border-transparent hover:border-white"
+            href="https://steamcommunity.com/groups/tentaclesoft"
+          >
+            Steam Group
+          </a>
+        </div>
+        <div className="grid grid-cols-2 gap-1">
           {data?.map((repository) => (
             <a
               key={repository.id}
