@@ -1,10 +1,10 @@
 export const ExternalLinks = [
   {
     name: 'GitHub',
-    link: 'https://github.com/tentaclenotsoft'
+    redirect: '/github'
   },
   {
     name: 'Steam Group',
-    link: 'https://steamcommunity.com/groups/tentaclesoft'
+    redirect: '/steam'
   }
 ]

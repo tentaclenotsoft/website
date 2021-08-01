@@ -15,11 +15,11 @@ const Home: React.FC = () => {
           tentaclesoft
         </h1>
         <div className="my-4 font-thin flex justify-center gap-2">
-          {ExternalLinks.map(({ name, link }, index) => (
+          {ExternalLinks.map(({ name, redirect }, index) => (
             <a
               key={index}
               className="border-b border-transparent hover:border-white"
-              href={link}
+              href={redirect}
             >
               {name}
             </a>
