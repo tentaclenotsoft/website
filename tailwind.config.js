@@ -1,6 +1,6 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./src/{pages,components}/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     backgroundColor: (theme) => ({
       ...theme('colors'),
