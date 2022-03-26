@@ -28,23 +28,25 @@ export default async (
 
     const repositories = _repositories
       .filter(({ id }) => id !== 341026742)
-      .map(({
-        id,
-        name,
-        html_url,
-        description,
-        language,
-        stargazers_count,
-        forks
-      }) => ({
-        id,
-        name,
-        url: html_url,
-        description,
-        language,
-        stars: stargazers_count,
-        forks
-      }))
+      .map(
+        ({
+          id,
+          name,
+          html_url,
+          description,
+          language,
+          stargazers_count,
+          forks
+        }) => ({
+          id,
+          name,
+          url: html_url,
+          description,
+          language,
+          stars: stargazers_count,
+          forks
+        })
+      )
 
     cachedRepositories = repositories
 

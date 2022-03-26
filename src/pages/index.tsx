@@ -44,8 +44,7 @@ const Home: React.FC = () => {
                 <div className="flex items-center">
                   <span
                     className={`mr-1.5 h-3 w-3 border rounded-full border-transparent bg-lang-${repository.language.toLowerCase()}`}
-                  >
-                  </span>
+                  ></span>
                   <span className="text-xs font-light">
                     {repository.language}
                   </span>

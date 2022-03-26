@@ -5,24 +5,24 @@
     "node": true
   },
   "extends": [
-    "standard",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "standard",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 12,
+    "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint"
-  ],
+  "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
     "camelcase": "off",
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "space-before-function-paren": ["error", "always"],
+    "prettier/prettier": "off"
   }
 }
