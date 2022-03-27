@@ -2,11 +2,11 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { Octokit } from '@octokit/core'
 
-import { GithubRepositoryResponse } from '../../responses'
+import { IOrganizationRepository } from '../../interface'
 
 const { GITHUB_ORGANIZATION_NAME } = process.env
 
-let cachedRepositories: GithubRepositoryResponse[] = null
+let cachedRepositories: IOrganizationRepository[] = null
 
 export default async (
   request: NextApiRequest,
