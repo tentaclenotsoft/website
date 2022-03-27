@@ -1,6 +1,7 @@
 import React from 'react'
 
 import type { NextPage } from 'next'
+import Image from 'next/image'
 
 import { StarIcon, RepoForkedIcon } from '@primer/octicons-react'
 import { twMerge } from 'tailwind-merge'
@@ -9,7 +10,8 @@ import Footer from '../components/Footer'
 import { useFetch } from '../hooks/useFetch'
 
 const Home: NextPage = () => {
-  const { data } = useFetch('/api/repositories')
+  const { data: repositories } = useFetch('/api/repositories')
+  const { data: members } = useFetch('/api/members')
 
   return (
     <>
@@ -24,7 +26,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="space-y-20">
         <div className="flex flex-col justify-center">
           <div className="mx-auto mt-5">
             <h2 className="text-4xl text-center font-raleway font-extrabold">
@@ -32,7 +34,7 @@ const Home: NextPage = () => {
             </h2>
           </div>
           <div className="mx-auto my-10 grid lg:grid-cols-2 gap-2">
-            {data?.map((repository) => (
+            {repositories?.map((repository) => (
               <a
                 key={repository.id}
                 className="w-96 min-h-[138px] flex flex-col border border-zinc-50/5 hover:bg-white/5 p-3 space-y-3"
@@ -70,6 +72,37 @@ const Home: NextPage = () => {
                   </div>
                 </div>
               </a>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-col justify-center">
+          <div className="mx-auto mt-5">
+            <h2 className="text-4xl text-center font-raleway font-extrabold">
+              Team
+            </h2>
+          </div>
+          <div className="flex mx-auto my-10 space-x-3">
+            {members?.map((member) => (
+              <div
+                key={member.id}
+                className="p-3 space-y-2 hover:bg-white/5 hover:scale-105 transition delay-75 duration-300 ease-in-out"
+              >
+                <div className="w-52">
+                  <Image
+                    src={member.avatar_url}
+                    alt={member.username}
+                    width="100%"
+                    height="100%"
+                    layout="responsive"
+                    objectFit="contain"
+                  />
+                </div>
+                <div className="flex justify-center">
+                  <a className="text-xl font-bold" href={member.url}>
+                    @{member.username}
+                  </a>
+                </div>
+              </div>
             ))}
           </div>
         </div>
