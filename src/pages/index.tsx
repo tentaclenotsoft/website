@@ -1,72 +1,81 @@
 import React from 'react'
 
+import type { NextPage } from 'next'
+
 import { StarIcon, RepoForkedIcon } from '@primer/octicons-react'
+import { twMerge } from 'tailwind-merge'
 
+import Footer from '../components/Footer'
 import { useFetch } from '../hooks/useFetch'
-import { ExternalLinks } from '../utils/Constants'
 
-const Home: React.FC = () => {
+const Home: NextPage = () => {
   const { data } = useFetch('/api/repositories')
 
   return (
-    <div className="bg-dark-hard text-white font-sans flex h-screen">
-      <div className="m-auto">
-        <h1 className="text-3xl font-thin text-center cursor-default">
-          tentaclesoft
-        </h1>
-        <div className="my-4 font-thin flex justify-center gap-2">
-          {ExternalLinks.map(({ name, link }, index) => (
-            <a
-              key={index}
-              className="border-b border-transparent hover:border-white"
-              href={link}
-            >
-              {name}
-            </a>
-          ))}
-        </div>
-        <div className="grid sm:grid-cols-2 gap-1">
-          {data?.map((repository) => (
-            <a
-              key={repository.id}
-              className="w-64 flex flex-col bg-dark-soft border border-transparent hover:border-gray-200 hover:border-opacity-25 p-3 space-y-3"
-              href={repository.url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <h3 className="text-white font-semibold text-md">
-                {repository.name}
-              </h3>
-              <p className="text-xs flex-auto text-justify text-gray-400 leading-sm">
-                {repository.description}
-              </p>
-              <div className="flex justify-between">
-                <div className="flex items-center">
-                  <span
-                    className={`mr-1.5 h-3 w-3 border rounded-full border-transparent bg-lang-${repository.language.toLowerCase()}`}
-                  ></span>
-                  <span className="text-xs font-light">
-                    {repository.language}
-                  </span>
-                </div>
-                <div className="text-xs flex space-x-2">
-                  {repository.stars > 0 && (
-                    <span>
-                      <StarIcon size={14} /> {repository.stars}
-                    </span>
-                  )}
-                  {repository.forks > 0 && (
-                    <span>
-                      <RepoForkedIcon size={14} /> {repository.forks}
-                    </span>
-                  )}
-                </div>
-              </div>
-            </a>
-          ))}
+    <>
+      <div className="h-screen">
+        <div className="h-[95%] bg-gradient-to-r from-indigo-500/50 via-sky-500/50 to-teal-500/50 bg-animate">
+          <div className="h-full flex">
+            <div className="m-auto">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-raleway font-extrabold cursor-default select-none">
+                tentaclesoft
+              </h1>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+      <div>
+        <div className="flex flex-col justify-center">
+          <div className="mx-auto mt-5">
+            <h2 className="text-4xl text-center font-raleway font-extrabold">
+              Projects
+            </h2>
+          </div>
+          <div className="mx-auto my-10 grid lg:grid-cols-2 gap-2">
+            {data?.map((repository) => (
+              <a
+                key={repository.id}
+                className="w-96 min-h-[138px] flex flex-col border border-zinc-50/5 hover:bg-white/5 p-3 space-y-3"
+                href={repository.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <h3 className="font-semibold text-lg">{repository.name}</h3>
+                <p className="text-sm text-white/50 flex-auto text-justify leaging-sm">
+                  {repository.description}
+                </p>
+                <div className="flex justify-between">
+                  <div className="flex items-center">
+                    <div
+                      className={twMerge(
+                        'mr-1.5 h-3 w-3 border rounded-full border-transparent',
+                        `bg-lang-${repository.language.toLowerCase()}`
+                      )}
+                    ></div>
+                    <span className="text-sm font-light">
+                      {repository.language}
+                    </span>
+                  </div>
+                  <div className="text-sm flex space-x-2">
+                    {repository.stars > 0 && (
+                      <span>
+                        <StarIcon size={16} /> {repository.stars}
+                      </span>
+                    )}
+                    {repository.forks > 0 && (
+                      <span>
+                        <RepoForkedIcon size={16} /> {repository.forks}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </>
   )
 }
 

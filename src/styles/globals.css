@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
+
+.bg-animate {
+  background-size: 400%;
+
+  -webkit-animation: BackgroundAnimation 3s ease infinite;
+  -moz-animation: BackgroundAnimation 3s ease infinite;
+  animation: BackgroundAnimation 3s ease infinite;
+}
+
+@keyframes BackgroundAnimation {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 @tailwind utilities;

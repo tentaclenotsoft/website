@@ -2,16 +2,17 @@ module.exports = {
   content: ['./src/{pages,components}/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
-    backgroundColor: (theme) => ({
-      ...theme('colors'),
-      dark: {
-        soft: '#252525',
-        hard: '#151515'
+    extend: {
+      colors: {
+        lang: {
+          javascript: '#f1e05a',
+          typescript: '#2b7489'
+        }
       },
-      lang: {
-        javascript: '#f1e05a'
+      fontFamily: {
+        raleway: ['Raleway', 'sans-serif']
       }
-    })
+    }
   },
   variants: {
     extend: {}
