@@ -3,12 +3,6 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      colors: {
-        lang: {
-          javascript: '#f1e05a',
-          typescript: '#2b7489'
-        }
-      },
       fontFamily: {
         raleway: ['Raleway', 'sans-serif']
       }

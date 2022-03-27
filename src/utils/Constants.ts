@@ -13,4 +13,9 @@ const ExternalLinks = [
   }
 ]
 
-export { ExternalLinks }
+const LanguageColorClasses = {
+  javascript: '#f1e05a',
+  typescript: '#2b7489'
+}
+
+export { ExternalLinks, LanguageColorClasses }

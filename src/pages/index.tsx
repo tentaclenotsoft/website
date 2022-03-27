@@ -4,10 +4,10 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 
 import { StarIcon, RepoForkedIcon } from '@primer/octicons-react'
-import { twMerge } from 'tailwind-merge'
 
 import Footer from '../components/Footer'
 import { useFetch } from '../hooks/useFetch'
+import { LanguageColorClasses } from '../utils/Constants'
 
 const Home: NextPage = () => {
   const { data: repositories } = useFetch('/api/repositories')
@@ -49,10 +49,13 @@ const Home: NextPage = () => {
                 <div className="flex justify-between">
                   <div className="flex items-center">
                     <div
-                      className={twMerge(
-                        'mr-1.5 h-3 w-3 border rounded-full border-transparent',
-                        `bg-lang-${repository.language.toLowerCase()}`
-                      )}
+                      className="mr-1.5 h-3 w-3 border rounded-full border-transparent"
+                      style={{
+                        backgroundColor:
+                          LanguageColorClasses[
+                            repository.language.toLowerCase()
+                          ]
+                      }}
                     ></div>
                     <span className="text-sm font-light">
                       {repository.language}
