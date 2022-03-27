@@ -13,8 +13,8 @@ const Footer = () => {
             The World!
           </h3>
           <div className="flex justify-center space-x-5">
-            {ExternalLinks.map(({ link, Icon }, index) => (
-              <a key={index} href={link}>
+            {ExternalLinks.map(({ path, Icon }, index) => (
+              <a key={index} href={path}>
                 <Icon size={28} />
               </a>
             ))}
