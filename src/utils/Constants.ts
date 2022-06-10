@@ -13,7 +13,7 @@ const ExternalLinks = [
 
 const LanguageColorClasses = {
   javascript: '#f1e05a',
-  typescript: '#2b7489'
+  typescript: '#3178c6'
 }
 
 export { ExternalLinks, LanguageColorClasses }
